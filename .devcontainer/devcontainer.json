@@ -1,0 +1,23 @@
+{
+	"name": "Flutter Development Container",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash"
+			},
+			"extensions": [
+				"dart-code.flutter",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"workspaceFolder": "/home/shane/holbertonschool-holbegram",
+	"mounts": [
+		"source=/home/shane/holbertonschool-holbegram,target=/home/shane/holbertonschool-holbegram,type=bind"
+	],
+	"remoteUser": "root"
+}
