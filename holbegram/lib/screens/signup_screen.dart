@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
+import './login_screen.dart';
 
 class SignUp extends StatefulWidget {
   final TextEditingController emailController;
@@ -42,7 +43,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
         body: SingleChildScrollView(
             child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -151,18 +152,31 @@ class _SignUpState extends State<SignUp> {
                     const Divider(
                       thickness: 2,
                     ),
-                    const SizedBox(height: 28),
-                    const Row(
+                    const SizedBox(height: 12),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Have an account?'),
-                        Text(
-                          '   Log in',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(218, 226, 37, 24),
-                          ),
-                        ),
+                        const Text('Have an account?'),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen(
+                                          emailController:
+                                              TextEditingController(),
+                                          passwordController:
+                                              TextEditingController(),
+                                        )),
+                              );
+                            },
+                            child: const Text(
+                              '   Log in',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(218, 226, 37, 24),
+                              ),
+                            )),
                       ],
                     ),
                   ],
