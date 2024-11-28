@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/text_field.dart'; // Assurez-vous que vous avez créé TextFieldInput
+import '../widgets/text_field.dart';
 
 class LoginScreen extends StatefulWidget {
   final TextEditingController emailController;
@@ -97,9 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
+                    backgroundColor: WidgetStateProperty.all(
                         const Color.fromARGB(218, 226, 37, 24)),
-                    shape: MaterialStateProperty.all(
+                    shape: WidgetStateProperty.all(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5), // Coins carrés
                       ),
@@ -117,10 +117,10 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 24),
 
               // Forgot password
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Forgot your login details?'),
+                  Text('Forgot your login details?'),
                   Text(
                     ' Get help logging in',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -156,17 +156,17 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 10),
 
               // OR divider
-              Row(
+              const Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Flexible(
+                  Flexible(
                     child: Divider(
                       thickness: 2,
                     ),
                   ),
-                  const Text(' OR '),
-                  const Flexible(
+                  Text(' OR '),
+                  Flexible(
                     child: Divider(
                       thickness: 2,
                     ),
