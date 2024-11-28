@@ -9,16 +9,23 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Initialisation des contrôleurs ici
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+
     return MaterialApp(
       title: 'Holbegram',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: LoginScreen(
+        emailController: emailController,
+        passwordController: passwordController,
+      ),
     );
   }
 }
